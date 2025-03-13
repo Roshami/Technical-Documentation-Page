@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technical Documentation Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header id="top" class="topic">Node.js</header>
+                
+                    <ul>
+                        
+                        <li><a href="#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#installation_and_setup" class="nav-link">Installation and Setup</a></li>
+                        <li><a href="#basic_concepts" class="nav-link">Basic Concepts</a></li>
+                        <li><a href="#common_use_cases" class="nav-link">Common Use Cases</a></li>
+                        <li><a href="#code_examples" class="nav-link">Code Examples</a></li>
+                        <li><a href="#advanced_topics" class="nav-link">Advanced Topics</a></li>
+                        <li><a href="#security" class="nav-link">Security</a></li>
+                        <li><a href="#performance_optimization" class="nav-link">Performance Optimization</a></li>
+                    </ul>
+        </nav>
+        <div id="main-doc">
+            <div class="contaier">
+                <section id="introduction" class="main-section">
+                    <header>Introduction</header>
+                    <article>
+                        <p>Node.js is a powerful, open-source, server-side JavaScript runtime environment built on Chrome's V8 JavaScript engine. 
+                            Created by Ryan Dahl in 2009, Node.js was designed to enable developers to build scalable and high-performance network 
+                            applications. Its event-driven, non-blocking I/O model makes it efficient and suitable for real-time applications, such 
+                            as chat servers and online gaming. With its single-threaded architecture and extensive ecosystem, Node.js has become a 
+                            popular choice for developers aiming to create fast, scalable, and efficient web applications.</p>
+                    </article>
+                </section>
+                <section id="architecture" class="main-section">
+                    <header>Architecture</header>
+                    <article>
+                        <p>Node.js operates on an event-driven, non-blocking I/O model, making it lightweight and efficient. Unlike traditional 
+                            multi-threaded server models, Node.js uses a single-threaded event loop to handle multiple concurrent connections. 
+                            This event loop, combined with the power of Chrome's V8 JavaScript engine, allows Node.js to execute code outside 
+                            of the browser with high performance. The architecture enables Node.js to handle asynchronous operations, such as 
+                            reading files or querying databases, without blocking the main execution thread, thus enhancing scalability and 
+                            performance in handling numerous simultaneous connections.</p>
+                    </article>
+                </section>
+                <section id="features" class="main-section">
+                    <header>Features</header>
+                    <article>
+                        <ul class="features_list">
+                            <li><strong>Asynchronous and Event-Driven:</strong> Efficiently handles multiple operations simultaneously.</li>
+                            <li><strong>Single-Threaded, Highly Scalable:</strong> Manages numerous connections with an event loop.</li>
+                            <li><strong>Fast Execution:</strong> Powered by the V8 JavaScript engine for quick code execution.</li>
+                            <li><strong>NPM (Node Package Manager):</strong> Access to a vast ecosystem of open-source libraries.</li>
+                            <li><strong>Cross-Platform:</strong> Runs on Windows, macOS, and Linux.</li>
+                            <li><strong>Microservices-Friendly:</strong>  Ideal for building modular microservices architectures.</li>
+                            <li><strong>Rich Ecosystem:</strong> Extensive modules and libraries for enhanced functionality.</li>
+                        </ul>
+                    </article>
+                </section>
+                <section id="installation_and_setup" class="main-section">
+                    <header>Installation and Setup</header>
+                    <article>
+                        <div id="intallation">
+                            <h4>Installation Steps</h4>
+                            <h5>Windows</h5>
+                            <ol>
+                                <li>Download the installer from the <a href="https://nodejs.org/en">official Node.js website.</a></li>
+                                <li>Run the installer and follow the on-screen instructions.</li>
+                                <li>Verify installation by running <b>"node -v"</b> in the command prompt.</li>
+                            </ol>
+                            <h5>MacOS</h5>
+                            <ol>
+                                <li>Open Terminal.</li>
+                                <li>Use Homebrew: <b>"brew install node."</b></li>
+                                <li>Verify installation by running <b>"node -v"</b>.</li>
+                            </ol>
+                            <h5>Linux</h5>
+                            <ol>
+                                <li>Open Terminal.</li>
+                                <li>Use the package manager:
+                                    <ul>
+                                        <li>For Debian/Ubuntu: <b>"sudo apt-get install nodejs."</b></li>
+                                        <li>For Fedora: <b>"sudo dnf install nodejs."</b></li>
+                                    </ul>
+                                </li>
+                                <li>Verify installation by running <b>"node -v"</b>.</li>
+                        </div>
+                        <div id="verification">
+                            <h4>Verification</h4>
+                            <p>Run <b>"node -v"</b> and <b>"npm -v"</b> in your terminal to confirm Node.js and NPM are installed correctly.</p>
+                        </div>
+                    </article>
+                </section>
+                <section id="basic_concepts" class="main-section">
+                    <header>Basic Concepts</header>
+                    <article>
+                        <h3>Modules</h3>
+                        <p>Node.js uses a modular system where functionalities are divided into reusable pieces of code called modules. There are 
+                            built-in modules (like <b>"http"</b>, <b>"fs"</b>) and you can create custom modules.</p>
+                        <div class="code">
+                            <code class="js">
+                                // Using a built-in module <br>
+                                const http = require('http');  <br>
+                                <br>
+                                // Creating a custom module  <br>
+                                module.exports = function () {  <br>
+                                console.log('Hello from a custom module!');  <br>
+                                };
+                            </code>
+                        </div>    
+                        <h3>Package Management</h3>
+                        <p>Node.js uses NPM (Node Package Manager) to manage packages. You can install packages using:</p>
+                        <div class="code">
+                            <code class="js">
+                                npm install &lt;package-name>
+                            </code>
+                        </div>
+                        <h3>Callbacks, Promises, and Async/Await</h3>
+                        <p>Node.js uses a modular system where functionalities are divided into reusable pieces of code called modules. There are 
+                            built-in modules (like <b>"http"</b>, <b>"fs"</b>) and you can create custom modules.</p>
+                        <div class="code">
+                            <code class="js">
+                            // Using a built-in module <br>
+                            const http = require('http');  <br>
+                            <br>
+                            // Creating a custom module  <br>
+                            module.exports = function () {  <br>
+                            console.log('Hello from a custom module!');  <br>
+                            };
+                        </code>
+                        </div>
+                    </article>
+                </section>
+                <section id="common_use_cases" class="main-section">
+                    <header>Common Use Cases</header>
+                    <article>
+                        <ul>
+                            <li><strong>Web Servers:</strong> Efficiently handles HTTP requests, making it ideal for building web servers.</li>
+                            <li><strong>API Development:</strong> Creates RESTful APIs to interact with databases and other services.</li>
+                            <li><strong>Real-Time Applications:</strong> Powers real-time applications like chat apps and live data dashboards.</li>
+                            <li><strong>Microservices:</strong> Ideal for developing and deploying microservices architectures due to its lightweight and modular nature.</li>
+                            <li><strong>Command-Line Tools:</strong> Used to build command-line tools and scripts.</li>
+                        </ul>
+                    </article>
+                </section>
+                <section id="code_examples" class="main-section">
+                    <header>Code Examples</header>
+                    <article>
+                        <h3>Hello World</h3>
+                        <div class="code">
+                            <code class="js">
+                                console.log('Hello World');
+                            </code>
+                        </div>
+                        <h3>Basic Server</h3>
+                        <div class="code">
+                            <code class="js">
+                                const http = require('http'); <br>
+                                <br>
+                                const server = http.createServer((req, res) => { <br>
+                                res.statusCode = 200; <br>
+                                res.setHeader('Content-Type', 'text/plain'); <br>
+                                res.end('Hello World\n'); <br>
+                                }); <br>
+                                <br>
+                                server.listen(3000, '127.0.0.1', () => { <br>
+                                console.log('Server running at http://127.0.0.1:3000/'); <br>
+                                });                            
+                            </code>
+                        </div>
+                        <h3>API Endpoint</h3>
+                        <div class="code">
+                            <code class="js">
+                                const express = require('express'); <br>
+                                const app = express(); <br>
+                                <br>
+                                app.get('/api', (req, res) => { <br>
+                                res.json({ message: 'Hello World' }); <br>
+                                }); <br>
+                                <br>
+                                app.listen(3000, () => { <br>
+                                console.log('Server is running on port 3000'); <br>
+                                });                            
+                            </code>
+                        </div>
+                    </article>
+                </section>
+                <section id="advanced_topics" class="main-section">
+                    <header>Advanced Topics</header>
+                    <article>
+                        <h3>Streams</h3>
+                        <p>Streams are used to handle reading and writing data in chunks, making it possible to process large files efficiently.</p>
+                        <div class="code">
+                            <code class="js">
+                                const fs = require('fs'); <br>
+                                <br>
+                                const readableStream = fs.createReadStream('largefile.txt'); <br>
+                                readableStream.on('data', (chunk) => { <br>
+                                console.log(`Received ${chunk.length} bytes of data.`); <br>
+                                });                            
+                            </code>
+                        </div> 
+                        <h3>Buffers</h3>
+                        <p>Buffers are used to handle binary data directly in memory, useful for dealing with streams of binary data.</p>
+                        <div class="code">
+                            <code class="js">
+                                const buffer = Buffer.from('Hello World', 'utf-8'); <br>
+                                console.log(buffer); // Prints: &lt;Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64> 
+                            </code>
+                        </div>
+                        <h3>Cluster Module</h3>
+                        <p>The Cluster module allows you to create child processes that share the same server port, improving performance on multi-core systems.</p>
+                        <div class="code">
+                            <code class="js">
+                                const cluster = require('cluster'); <br>
+                                const http = require('http'); <br>
+                                const numCPUs = require('os').cpus().length; <br>
+                                <br>
+                                if (cluster.isMaster) { <br>
+                                for (let i = 0; i < numCPUs; i++) { <br>
+                                    cluster.fork(); <br>
+                                } <br>
+                                <br>
+                                cluster.on('exit', (worker, code, signal) => { <br>
+                                    console.log(`Worker ${worker.process.pid} died`); <br>
+                                }); <br>
+                                } else { <br>
+                                http.createServer((req, res) => { <br>
+                                    res.writeHead(200); <br>
+                                    res.end('Hello World\n'); <br>
+                                }).listen(8000); <br>
+                                }                            
+                            </code>
+                        </div>
+                    </article>
+                </section>
+                <section id="security" class="main-section">
+                    <header>Security</header>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li><strong>Validate Input:</strong> Always validate and sanitize user inputs to prevent injection attacks.</li>
+                        <li><strong>Use HTTPS:</strong> Secure your application by using HTTPS to encrypt data transmission.</li>
+                        <li><strong>Environment Variables:</strong> Store sensitive information like API keys and database credentials in environment variables.</li>
+                        <li><strong>Dependencies:</strong> Regularly update dependencies and use tools like <b>"npm audit"</b> to check for vulnerabilities.</li>
+                    </ul>
+                    <h3>Common Vulnerabilities</h3>
+                    <ul>
+                        <li><strong>SQL Injection:</strong> Prevent SQL injection by using parameterized queries or ORM libraries.</li>
+                        <li><strong>Cross-Site Scripting (XSS):</strong> Mitigate XSS attacks by escaping user inputs and using security libraries like <b>"helmet"</b>.</li>
+                        <li><strong>Cross-Site Request Forgery (CSRF):</strong> Protect against CSRF by using tokens with libraries like <b>"csurf"</b>.</li>
+                    </ul>
+                    <h3>Example: Using Helmet for Security Headers</h3>
+                    <div class="code">
+                        <p class="js">
+                            const express = require('express'); <br>
+                            const helmet = require('helmet'); <br>
+                            <br>
+                            const app = express(); <br>
+                            app.use(helmet()); <br>
+                            <br>
+                            app.get('/', (req, res) => { <br>
+                            res.send('Hello World'); <br>
+                            }); <br>
+                            <br>
+                            app.listen(3000, () => { <br>
+                            console.log('Server is running on port 3000'); <br>
+                            });                      
+                        </p>
+                </section>
+                <section id="performance_optimization" class="main-section">
+                    <header>Performance Optimization</header>
+                    <h3>Profiling and Monitoring</h3>
+                    <p class="intro">Use profiling and monitoring tools to identify and fix performance bottlenecks.</p>
+                    <ul>
+                        <li><strong>Node.js Profiling:</strong> Use the built-in <b>"--prof"</b> flag to generate a performance profile.
+                            <br>
+                            <div class="code">
+                                <p class="js">
+                                    node --prof app.js                        
+                                </p>
+                            </div> 
+                        </li>
+                        <li><strong>Monitoring Tools:</strong> Utilize tools like PM2, New Relic, or Datadog for real-time performance monitoring.</li>
+                    </ul>
+                    <h3>Caching</h3>
+                    <p class="intro">Implement caching strategies to reduce latency and improve response times.</p>
+                    <ul>
+                        <li><strong>In-Memory Caching:</strong> Use in-memory stores like Redis or Memcached.
+                            <div class="code">
+                                <p class="js">
+                                    const redis = require('redis');  <br>
+                                    const client = redis.createClient();                        
+                                </p>
+                            </div> 
+                        </li>
+                    </ul>
+                    <h3>Load Balancing</h3>
+                    <p class="intro">Distribute incoming traffic across multiple servers to ensure optimal resource utilization and high availability.</p>
+                    <ul>
+                        <li><strong>Cluster Module:</strong> Utilize Node.js's cluster module to fork multiple worker processes.
+                            <div class="code">
+                                <p class="js">
+                                    const cluster = require('cluster');  <br>
+                                    const http = require('http');<br>
+                                    const numCPUs = require('os').cpus().length;<br>
+                                    <br>
+                                    if (cluster.isMaster) {<br>
+                                    for (let i = 0; i < numCPUs; i++) {<br>
+                                        cluster.fork();<br>
+                                    }<br>
+                                    <br>
+                                    cluster.on('exit', (worker, code, signal) => {<br>
+                                        console.log(`Worker ${worker.process.pid} died`);<br>
+                                    });<br>
+                                    } else {<br>
+                                    http.createServer((req, res) => {<br>
+                                        res.writeHead(200);<br>
+                                        res.end('Hello World\n');<br>
+                                    }).listen(8000);<br>
+                                    }                       
+                                </p>
+                            </div> 
+                        </li>
+                    </ul>
+                    <h3>Efficient Database Queries</h3>
+                    <p class="intro">Optimize database queries to reduce execution time.</p>
+                    <ul>
+                        <li><strong>Indexes:</strong> Ensure proper indexing of database tables.</li>
+                        <li><strong>Query Optimization:</strong> Use tools and techniques to optimize SQL queries.</li>
+                    </ul>                    
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
