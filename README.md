@@ -23,7 +23,9 @@ This page covers:
 
 ## Preview
 
-![Technical Documentation Page Screenshot](screenshot.png)
+![Technical Documentation Page Screenshot](screenshots/Screenshot1.png)
+
+![Technical Documentation Page Screenshot](screenshots/Screenshot2.png)
 
 ## How to Use
 1. Clone this repository:
